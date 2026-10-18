@@ -1,0 +1,60 @@
+{
+    "name": "n8n-nodes-postplanify",
+    "version": "0.1.0",
+    "description": "n8n node for PostPlanify: schedule social media posts to 10 platforms, upload media, read analytics and reply to comments.",
+    "license": "MIT",
+    "homepage": "https://postplanify.com/integrations/n8n",
+    "keywords": [
+        "n8n-community-node-package",
+        "n8n",
+        "postplanify",
+        "social media",
+        "social media scheduling",
+        "instagram",
+        "linkedin",
+        "tiktok",
+        "facebook"
+    ],
+    "author": {
+        "name": "PostPlanify",
+        "email": "hasan@postplanify.com",
+        "url": "https://postplanify.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/postplanifyapp/n8n-nodes-postplanify.git"
+    },
+    "scripts": {
+        "build": "n8n-node build",
+        "build:watch": "tsc --watch",
+        "dev": "n8n-node dev",
+        "lint": "n8n-node lint",
+        "lint:fix": "n8n-node lint --fix",
+        "release": "n8n-node release",
+        "prepublishOnly": "n8n-node prerelease"
+    },
+    "files": [
+        "dist"
+    ],
+    "n8n": {
+        "n8nNodesApiVersion": 1,
+        "strict": true,
+        "credentials": [
+            "dist/credentials/PostPlanifyApi.credentials.js"
+        ],
+        "nodes": [
+            "dist/nodes/PostPlanify/PostPlanify.node.js",
+            "dist/nodes/PostPlanifyTrigger/PostPlanifyTrigger.node.js"
+        ]
+    },
+    "devDependencies": {
+        "@n8n/node-cli": "*",
+        "eslint": "9.32.0",
+        "prettier": "3.6.2",
+        "release-it": "^21.1.0",
+        "typescript": "5.9.2"
+    },
+    "peerDependencies": {
+        "n8n-workflow": "*"
+    }
+}
